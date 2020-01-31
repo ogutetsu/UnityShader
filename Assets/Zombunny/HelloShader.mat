@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HelloShader
-  m_Shader: {fileID: 4800000, guid: 511e8f76d7ee5c14eb73d88cfdfbaea6, type: 3}
+  m_Shader: {fileID: 4800000, guid: e7ba468f3f600d94a9614d4afb8fe54f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -78,6 +78,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Float: 0.5
+    - _Gloss: 0.724
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -87,18 +88,20 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Range: 0.77
-    - _RimPower: 2.73
+    - _RimPower: 3.5
     - _SLider: 4.49
     - _Slider: 4.18
     - _SmoothnessTextureChannel: 0
+    - _Spec: 0.041
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.18916605, g: 0.9150943, b: 0.06474723, a: 1}
+    - _Color: {r: 0.6057755, g: 0.6132076, b: 0.6045301, a: 1}
     - _Emission: {r: 0.14976712, g: 0.1432894, b: 0.8679245, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.41248116, g: 0.754717, b: 0.3097188, a: 0}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 0}
+    - _SpecColor: {r: 0.9811321, g: 0.22677112, b: 0.77393883, a: 1}
     - _Vector: {r: 0.5, g: 1, b: 1, a: 1}
