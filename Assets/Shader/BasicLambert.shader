@@ -14,10 +14,21 @@
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Lambert
+        #pragma surface surf BasicLambert
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
+
+
+        half4 LightingBasicLambert(SurfaceOutput s, half3 lightDir, half atten)
+        {
+            half NdotL = dot(s.Normal, lightDir);
+            half4 c;
+            c.rgb = s.Albedo * _LightColor0.rgb * (NdotL * atten);
+            c.a = s.Alpha;
+            return c;
+        }
+
 
         struct Input
         {
@@ -40,8 +51,8 @@
             void surf(Input IN, inout SurfaceOutput o)
         {
             o.Albedo = _Color.rgb;
-            o.Specular = _Spec;
-            o.Gloss = _Gloss;
+            //o.Specular = _Spec;
+            //o.Gloss = _Gloss;
         
         }
         ENDCG
