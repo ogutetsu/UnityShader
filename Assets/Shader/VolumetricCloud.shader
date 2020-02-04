@@ -66,6 +66,7 @@
             float noise3d(float3 value)
             {
                 value *= _Scale;
+                value.x += _Time.x * 5;
                 float3 interp = frac(value);
                 interp = smoothstep(0.0, 1.0, interp);
 
@@ -128,6 +129,18 @@
 
             #define NOISEPROC(N, P) 1.75 * N * saturate((_MaxHeight - P.y)/_FadeDist)
 
+            float map2(float3 q)
+            {
+                float3 p = q;
+                float f;
+                f = 0.8 * noise3d(q);
+                q = q * 1.5;
+                f += 0.4 * noise3d(q);
+                q = q * 3.5;
+                f += 0.2 * noise3d(q);
+                return NOISEPROC(f, p);
+            }
+
             float map1(float3 q)
             {
                 float3 p = q;
@@ -148,6 +161,7 @@
                 float ct = 0;
 
                 MARCH(_Steps, map1, cameraPos, viewDir, bgcol, col, depth, ct);
+                MARCH(_Steps, map2, cameraPos, viewDir, bgcol, col, depth*2, ct);
 
                 return clamp(col, 0.0, 1.0);
             }
