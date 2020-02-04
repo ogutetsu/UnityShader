@@ -133,6 +133,10 @@
                 float3 p = q;
                 float f;
                 f = 0.5 * noise3d(q);
+                q = q * 2;
+                f += 0.25 * noise3d(q);
+                q = q * 3.5;
+                f += 0.15 * noise3d(q);
                 return NOISEPROC(f, p);
             }
 
